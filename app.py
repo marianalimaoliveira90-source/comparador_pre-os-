@@ -72,13 +72,13 @@ elif aba == "🤖 Assistente IA":
     st.subheader("Assistente Virtual de Compras e Estoque")
     api_key = st.text_input("Insira sua API Key do Google Gemini:", type="password")
     pergunta = st.text_area("Faça uma pergunta sobre gestão, ofertas ou precificação:")
-    
+
     if st.button("Consultar IA"):
         if api_key and pergunta:
             try:
                 client = genai.Client(api_key=api_key)
                 response = client.models.generate_content(
-                    model='gemini-1.5-flash',
+                    model='gemini-2.5-flash',
                     contents=pergunta,
                 )
                 st.write(response.text)
