@@ -77,10 +77,10 @@ elif aba == "🤖 Assistente IA":
         if api_key and pergunta:
             try:
                 client = genai.Client(api_key=api_key)
-                response = client.models.generate_content(
-                    model='gemini-2.5-flash',
-                    contents=pergunta,
-                )
+response = client.models.generate_content(
+    model='gemini-1.5-flash',
+    contents=pergunta,
+)
                 st.write(response.text)
             except Exception as e:
                 st.error(f"Erro ao consultar a IA: {e}")
